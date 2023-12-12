@@ -13,6 +13,7 @@ Use `settings.json` to define settings of the app.
 - outpu_file_path: Output Excel file path
 - starting_url: Url of the main page of Ensambl
     - Default: https://www.ensembl.org/index.html
+- do_end_checkup: After finishing the initial run, try to redo all unset values
 - options: Edge Web driver options
 
 Whole process is **headless**.
