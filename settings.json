@@ -1,0 +1,20 @@
+{
+    "thread_count": 1,
+    "page_load_seconds": 30,
+    "input_file_path": "./input/rsid_values__.xlsx",
+    "output_file_path": "./output/output_toscani.xlsx",
+    "starting_url": "https://www.ensembl.org/index.html",
+    "population": "Toscani in Italy",
+    "do_end_checkup": "true",
+    "options": [
+        "--headless",
+        "--disable-gpu",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-extensions",
+        "--log-level=3",
+        "--disable-crash-reporter",
+        "--disable-in-process-stack-traces",
+        "--output=/dev/null"
+    ]
+}
