@@ -1,5 +1,7 @@
 # Linkage Disequilibrium web scraper
 
+## About
+
 This program is used as an automation tool that generates a Linkage Disequilibrium matrix from the **Ensambl** database service -> https://www.ensembl.org/index.html
 
 ## Usage
@@ -16,7 +18,30 @@ Use `settings.json` to define settings of the app.
 - do_end_checkup: After finishing the initial run, try to redo all unset values
 - options: Edge Web driver options
 
-Whole process is **headless**.
+```json
+{
+    "thread_count": 1,
+    "page_load_seconds": 30,
+    "input_file_path": "./input/rsid_values__.xlsx",
+    "output_file_path": "./output/output_toscani.xlsx",
+    "starting_url": "https://www.ensembl.org/index.html",
+    "population": "Toscani in Italy",
+    "do_end_checkup": "true",
+    "options": [
+        "--headless",
+        "--disable-gpu",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-extensions",
+        "--log-level=3",
+        "--disable-crash-reporter",
+        "--disable-in-process-stack-traces",
+        "--output=/dev/null"
+    ]
+}
+```
+
+
 
 ### WebDriver
 
@@ -24,9 +49,10 @@ In order for Selenium to work, a WebDriver is required. As this program uses Edg
 
 Edge WebDriver download link: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 
-#### Setup
-
+> [!NOTE]
 > Make sure that the WebDriver is always up to date
+
+#### Setup
 
 - Download webdriver from the provided link
 - Place the contents of the zip into a folder (eg. `./WebDriver/EdgeWebDriver`)
@@ -41,13 +67,9 @@ Edge WebDriver download link: https://developer.microsoft.com/en-us/microsoft-ed
 
 ### Dependencies
 
-Required modules are (install with `pip install`):
+`pip install selenium openpyxl pandas`
 
-- selenium
-- openpyxl
-- pandas
-
-Start the app by starting `main.py`.
+App should be started from `main.py`
 
 ### Excel
 
